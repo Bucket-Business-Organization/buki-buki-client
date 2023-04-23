@@ -1,0 +1,118 @@
+.header {
+    padding: 20px;
+  }
+  .logoNickContainer {
+    display: flex;
+    justify-content: space-between;
+    color: #c3f1c8;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.5em;
+    color: #4de25e;
+  }
+  .welcomeArticle {
+    padding-right: 50px;
+  }
+  .nickName {
+    font-weight: bold;
+  }
+  .navigation {
+    margin-top: 20px;
+  }
+  
+  .navMenu {
+    list-style: none;
+    text-align: center;
+  }
+  .navItem {
+    display: inline-block;
+    margin-left: 50px;
+    color: #c3f1c8;
+  }
+  .bukiListTitle {
+    text-align: center;
+    color: #4de25e;
+  }
+  .main {
+    padding: 20px;
+  }
+  
+  .filterSearchForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .search {
+    border: none;
+    border-radius: 10px;
+    background-color: #c3f1c8;
+    padding: 5px 7px;
+  }
+  .filterMenu {
+    list-style: none;
+    text-align: center;
+  }
+  .filterItem {
+    display: inline-block;
+    margin-left: 50px;
+    color: #c3f1c8;
+  }
+  .addBukiProgressContainer {
+    position: fixed;
+    right: 20px;
+    top: 132px;
+  }
+  .addBuki {
+    border: 1px solid #c3f1c8;
+    border-radius: 100%;
+    background-color: #c3f1c8;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+  .progress {
+    border: 1px solid #c3f1c8;
+    border-radius: 100%;
+    background-color: #c3f1c8;
+    width: 35px;
+    height: 35px;
+  }
+  .bucketList {
+    margin-top: 40px;
+  }
+  .isSelected {
+    font-weight: bolder;
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+  }
+  .bukiItem {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px #c3f1c8;
+  }
+  .bukiContainer {
+    display: flex;
+  }
+  .bukiImage {
+    width: 80px;
+    border-radius: 100%;
+  }
+  .titleDescContainer {
+    margin-left: 20px;
+    align-items: center;
+    display: inline-block;
+    align-items: center;
+  }
+  .bukiDDay {
+    font-weight: bold;
+  }
+  .bukiDesc {
+    font-size: x-small;
+    line-height: 30px;
+  }
