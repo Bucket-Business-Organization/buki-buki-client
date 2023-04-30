@@ -52,48 +52,45 @@ const Lists = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        <header className={styles.header}>
-          <div className={styles.logoNickContainer}>
-            <div className={styles.welcomeArticle}>
-              환영합니다, <span className={styles.nickName}>다람쥐</span>님!
-            </div>
+      <header className={styles.header}>
+        <div className={styles.logoNickContainer}>
+          <div className={styles.welcomeArticle}>
+            환영합니다, <span className={styles.nickName}>다람쥐</span>님!
           </div>
-        </header>
-        <main className={styles.main}>
-          <h2 className={styles.bukiListTitle}>내 버킷리스트</h2>
-          <div className={styles.addBukiProgressContainer}>
-            <button className={styles.addBuki}>
-              <BsFillPencilFill size="20" color="white" />
-            </button>
-            <button className={styles.progress}>
-              <AiFillPieChart size="20" color="white" />
-            </button>
-          </div>
-          <div className={styles.filterSearchForm}>
-            <ul className={styles.filterMenu}>
-              <li className={styles.filterItem}>그룹별</li>
-              <li className={styles.filterItem}>카테고리별</li>
-              <li className={styles.filterItem}>상태별</li>
-            </ul>
-            {/* <label htmlFor="search">버키검색</label> */}
-            <input
-              type="search"
-              placeholder="검색어를 입력하세요"
-              className={styles.search}
-              id="search"
-            />
-          </div>
-
-          <div className={styles.bucketList}>
-            {bukiItem}
-            {bukiItem}
-            {bukiItem}
-            {bukiItem}
-            {bukiItem}
-          </div>
-        </main>
-      </body>
+        </div>
+      </header>
+      <main className={styles.main}>
+        <h2 className={styles.bukiListTitle}>내 버킷리스트</h2>
+        <div className={styles.addBukiProgressContainer}>
+          <button className={styles.addBuki}>
+            <BsFillPencilFill size="20" color="white" />
+          </button>
+          <button className={styles.progress}>
+            <AiFillPieChart size="20" color="white" />
+          </button>
+        </div>
+        <div className={styles.filterSearchForm}>
+          <ul className={styles.filterMenu}>
+            <li className={styles.filterItem}>그룹별</li>
+            <li className={styles.filterItem}>카테고리별</li>
+            <li className={styles.filterItem}>상태별</li>
+          </ul>
+          {/* <label htmlFor="search">버키검색</label> */}
+          <input
+            type="search"
+            placeholder="검색어를 입력하세요"
+            className={styles.search}
+            id="search"
+          />
+        </div>
+        <div className={styles.bucketList}>
+          {bukiItem}
+          {bukiItem}
+          {bukiItem}
+          {bukiItem}
+          {bukiItem}
+        </div>
+      </main>
     </React.Fragment>
   );
 };
