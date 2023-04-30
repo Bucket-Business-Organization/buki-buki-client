@@ -1,15 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
 
-export default function Title(props:any) {
-  return (
-    <Typography component="h2" variant="h6" color="primary" gutterBottom>
-      {props.children}
-    </Typography>
-  );
+export default function Title(props: any) {
+  return <h2>{props.children}</h2>;
 }
 
 Title.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
