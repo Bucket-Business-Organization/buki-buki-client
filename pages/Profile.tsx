@@ -1,6 +1,11 @@
+import ProfileForm from "@/components/common/ProfileForm";
 import BaseLayout from "../components/BaseLayout";
 const Profile = () => {
-  return <BaseLayout>프로필</BaseLayout>
+  return (
+    <BaseLayout>
+      <ProfileForm />
+    </BaseLayout>
+  );
 };
 
 export default Profile;
