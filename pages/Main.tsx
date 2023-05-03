@@ -1,6 +1,6 @@
 import { GroupCard } from "@/components/common/Group/GroupCard";
 import BaseLayout from "../components/BaseLayout";
-const GroupList = () => {
+const Main = () => {
   return (
     <BaseLayout>
       <GroupCard />
@@ -8,4 +8,4 @@ const GroupList = () => {
   );
 };
 
-export default GroupList;
+export default Main;
