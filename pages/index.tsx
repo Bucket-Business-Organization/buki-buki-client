@@ -1,11 +1,12 @@
+
 import BaseLayout from "../components/BaseLayout";
-import GroupList from "./GroupList";
+import Main from "./Main";
 
 const Home = () => {
   
   return (
     <BaseLayout>
-      <GroupList />
+      <Main />
     </BaseLayout>
   );
 };
