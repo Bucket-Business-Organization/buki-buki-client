@@ -5,6 +5,7 @@ import UserModal from "@/components/common/UserModal";
 
 import { useState } from "react";
 import AlertModal from "@/components/common/AlertModal";
+import ProfileImage from "@/components/common/ProfileImage";
 
 const Profile = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -43,6 +44,7 @@ const Profile = () => {
       {showAlertModal && (
         <AlertModal onClose={handleCloseAlertModal} isWithdraw />
       )}
+      <ProfileImage src="/다람.jpeg" />
     </BaseLayout>
   );
 };
