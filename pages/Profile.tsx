@@ -6,6 +6,7 @@ import UserModal from "@/components/common/UserModal";
 import { useState } from "react";
 import AlertModal from "@/components/common/AlertModal";
 import ProfileImage from "@/components/common/ProfileImage";
+import Input from "@/components/common/Input";
 
 const Profile = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,6 +46,15 @@ const Profile = () => {
         <AlertModal onClose={handleCloseAlertModal} isWithdraw />
       )}
       <ProfileImage src="/다람.jpeg" />
+      <Input id="name" label="name" placeholder="이름(닉네임)" />
+      <Input id="gender" label="gender" placeholder="성별" />
+      <Input
+        id="numCompleted"
+        label="numCompleted"
+        placeholder="달성한 버킷 리스트 수"
+      />
+      <Input id="birthday" label="birthday" placeholder="생년월일" />
+      <Input id="location" label="location" placeholder="주거지역" />
     </BaseLayout>
   );
 };
