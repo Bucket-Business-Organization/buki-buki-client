@@ -6,6 +6,7 @@ interface InputProps {
   type?: string;
   value?: string;
   placeholder?: string;
+  showLabel?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -15,13 +16,20 @@ const Input: React.FC<InputProps> = ({
   type = "text",
   value,
   placeholder,
+  showLabel = true,
   onChange,
 }) => {
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
-        {label}
-      </label>
+      {showLabel ? (
+        <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
+          {label}
+        </label>
+      ) : (
+        <label htmlFor={id} className="sr-only">
+          {label}
+        </label>
+      )}
       <input
         id={id}
         type={type}
