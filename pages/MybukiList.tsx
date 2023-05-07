@@ -4,8 +4,8 @@ import styles from "@/styles/Home.module.css";
 import { BsFillPencilFill } from "react-icons/bs";
 import { AiFillPieChart } from "react-icons/ai";
 import Link from "next/link";
-import DefaultList from "@/components/common/DefaultList";
-import EditModal from "@/components/common/EditModal";
+import DefaultList from "@/components/list/DefaultList";
+import EditModal from "@/components/modal/EditModal";
 
 const allBucketListItems = [
   { id: 1, title: "여행 가기", description: "일본, 한국, 태국 여행 가기" },
@@ -84,48 +84,9 @@ const allBucketListItems = [
     title: "토익 900점",
     description: "토익 시험을 보고 900점 이상 받기",
   },
-  {
-    id: 21,
-    title: "토익 900점",
-    description: "토익 시험을 보고 900점 이상 받기",
-  },
-  {
-    id: 22,
-    title: "토익 900점",
-    description: "토익 시험을 보고 900점 이상 받기",
-  },
-  {
-    id: 23,
-    title: "토익 900점",
-    description: "토익 시험을 보고 900점 이상 받기",
-  },
-  {
-    id: 24,
-    title: "토익 900점",
-    description: "토익 시험을 보고 900점 이상 받기",
-  },
-  {
-    id: 25,
-    title: "토익 900점",
-    description: "토익 시험을 보고 900점 이상 받기",
-  },
 ];
 
 const MybukiList = () => {
-  const bucketListItems = [
-    { id: 1, title: "여행 가기", description: "일본, 한국, 태국 여행 가기" },
-    {
-      id: 2,
-      title: "스카이다이빙",
-      description: "하늘에서 낙하산을 타고 뛰어내리기",
-    },
-    {
-      id: 3,
-      title: "코딩 대회 참가하기",
-      description: "프로그래밍 대회 참가하기",
-    },
-  ];
-
   const menuItems = ["전체", "진행 중", "완료"];
 
   const handleItemClick = (item: any) => {

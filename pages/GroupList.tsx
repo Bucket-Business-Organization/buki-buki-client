@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EditModal from '@/components/common/EditModal';
+import EditModal from '@/components/modal/EditModal';
 import BaseLayout from '@/components/BaseLayout';
 
 

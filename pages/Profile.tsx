@@ -1,4 +1,3 @@
-import InputForm from "@/components/common/InputForm";
 import BaseLayout from "../components/BaseLayout";
 import SearchForm from "@/components/common/SearchForm";
 import UserModal from "@/components/common/UserModal";
@@ -7,6 +6,7 @@ import { useState } from "react";
 import AlertModal from "@/components/common/AlertModal";
 import ProfileImage from "@/components/common/ProfileImage";
 import Input from "@/components/common/Input";
+import InputForm from "@/components/form/InputForm";
 
 const Profile = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,8 +26,15 @@ const Profile = () => {
 
   return (
     <BaseLayout>
-      <InputForm />
-      <SearchForm />
+      <InputForm
+        name="다람쥐"
+        gender="남"
+        numCompleted={3}
+        birthday={new Date("1997-01-01")}
+        location="서울"
+        onSubmit={(values) => console.log(values)}
+      />
+      <SearchForm onSearch={(searchText) => console.log(searchText)} />
       <button onClick={handleOpenModal}>Open UserModal</button>
       <br />
       <button onClick={() => setShowAlertModal(true)}>Open AlertModal</button>
