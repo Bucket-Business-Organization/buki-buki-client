@@ -1,5 +1,5 @@
 import BaseLayout from "../components/BaseLayout";
-import MybukiLists from "./MybukiLists";
+import MybukiList from "./MybukiList";
 import Title from "./Title";
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
      <Title> </Title>
       <div>
         <div>
-          <MybukiLists />
+          <MybukiList />
         </div>
       </div>
     </BaseLayout>

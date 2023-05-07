@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import Sidebar from "./Sidebar";
 interface Props {
-  children : ReactNode | ReactNode[];
+  children: ReactNode | ReactNode[];
 }
-const BaseLayout = ({ children }:Props) => {
+const BaseLayout = ({ children }: Props) => {
   return (
     <div className="layout">
       <Sidebar />
-      <main className="layout__main-content">{children}</main>;
+      <main className="layout__main-content">{children}</main>
     </div>
   );
 };
