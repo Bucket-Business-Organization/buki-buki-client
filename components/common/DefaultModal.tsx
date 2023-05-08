@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa";
-
 interface DefaultModalProps {
   isOpen: boolean;
   onClose: () => void;
