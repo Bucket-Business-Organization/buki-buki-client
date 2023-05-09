@@ -187,7 +187,7 @@ const Profile = () => {
         title={"회원 탈퇴 모달"}
       >
         <h2 className="text-xl font-medium">회원탈퇴</h2>
-        <p className="mb-4">
+        <p className="my-5">
           탈퇴 완료 후에는 회원님의 모든 정보가 삭제됩니다. 아래 입력창에
           “동의합니다”를 입력하고 확인을 누르면 탈퇴가 완료됩니다.
         </p>
