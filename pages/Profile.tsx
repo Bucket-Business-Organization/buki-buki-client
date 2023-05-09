@@ -1,7 +1,6 @@
 import BaseLayout from "../components/BaseLayout";
 import SearchForm from "@/components/common/SearchForm";
 import { useState } from "react";
-import AlertModal from "@/components/common/AlertModal";
 import ProfileImage from "@/components/common/ProfileImage";
 import Input from "@/components/common/Input";
 import InputForm from "@/components/form/InputForm";
@@ -20,12 +19,11 @@ const Profile = () => {
   return (
     <BaseLayout>
       <InputForm
-        name="다람쥐"
-        gender="남"
-        numCompleted={3}
-        birthday={new Date("1997-01-01")}
-        location="서울"
-        onSubmit={(values) => console.log(values)}
+        nickname={""}
+        gender={""}
+        bucketListCount={0}
+        birthdate={""}
+        location={""}
       />
       <SearchForm onSearch={(searchText) => console.log(searchText)} />
       <button
@@ -228,15 +226,6 @@ const Profile = () => {
           />
         </div>
       </DefaultModal>
-      <Input id="name" label="name" placeholder="이름(닉네임)" />
-      <Input id="gender" label="gender" placeholder="성별" />
-      <Input
-        id="numCompleted"
-        label="numCompleted"
-        placeholder="달성한 버킷 리스트 수"
-      />
-      <Input id="birthday" label="birthday" placeholder="생년월일" />
-      <Input id="location" label="location" placeholder="주거지역" />
     </BaseLayout>
   );
 };
