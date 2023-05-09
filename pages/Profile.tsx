@@ -3,7 +3,7 @@ import SearchForm from "@/components/common/SearchForm";
 import { useState } from "react";
 import ProfileImage from "@/components/common/ProfileImage";
 import Input from "@/components/common/Input";
-import InputForm from "@/components/form/InputForm";
+import MyProfileForm from "@/components/form/MyProfileForm";
 import DefaultModal from "@/components/common/DefaultModal";
 import DefaultButton from "@/components/common/DefaultButton";
 
@@ -18,7 +18,7 @@ const Profile = () => {
 
   return (
     <BaseLayout>
-      <InputForm
+      <MyProfileForm
         nickname={""}
         gender={""}
         bucketListCount={0}
