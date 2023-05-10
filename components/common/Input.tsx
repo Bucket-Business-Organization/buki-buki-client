@@ -9,6 +9,8 @@ interface InputProps {
   showLabel?: boolean;
   disabled?: boolean;
   defaultValue?: string;
+  accept?: string;
+
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -21,6 +23,7 @@ const Input: React.FC<InputProps> = ({
   showLabel = true,
   disabled = false,
   defaultValue = "",
+
   onChange,
 }) => {
   return (
