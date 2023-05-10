@@ -6,6 +6,9 @@ import Input from "@/components/common/Input";
 import MyProfileForm from "@/components/form/MyProfileForm";
 import DefaultModal from "@/components/common/DefaultModal";
 import DefaultButton from "@/components/common/DefaultButton";
+import AddBukiForm from "@/components/form/AddBukiForm";
+import Link from "next/link";
+import SignIn from "./SignIn";
 
 const Profile = () => {
   const [friendDeletion, setFriendDeletion] = useState(false);
@@ -18,6 +21,22 @@ const Profile = () => {
 
   return (
     <BaseLayout>
+      <Link href="/SignIn">
+        <DefaultButton
+          label={"로그인"}
+          onClick={() => {
+            alert("이동");
+          }}
+        />
+      </Link>
+      <Link href="/SignUp">
+        <DefaultButton
+          label={"회원가입"}
+          onClick={() => {
+            alert("이동");
+          }}
+        />
+      </Link>
       <MyProfileForm
         nickname={""}
         gender={""}
@@ -226,6 +245,8 @@ const Profile = () => {
           />
         </div>
       </DefaultModal>
+
+      <AddBukiForm />
     </BaseLayout>
   );
 };
