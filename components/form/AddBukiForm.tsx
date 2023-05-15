@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../common/Input";
 import DefaultButton from "../common/DefaultButton";
+import Calendar from "../common/Calendar";
 interface CategoryOption {
   value: string;
   label: string;
@@ -120,6 +121,7 @@ const AddBukiForm: React.FC = () => {
         onChange={handleImageChange}
         accept="image/*"
       />
+
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="category">카테고리</label>
@@ -157,6 +159,12 @@ const AddBukiForm: React.FC = () => {
         onClick={() => {
           alert("추가완료");
         }}
+      />
+      <Calendar
+        onDatesSelected={function (
+          startDate: Date | null,
+          endDate: Date | null
+        ) {}}
       />
     </form>
   );
