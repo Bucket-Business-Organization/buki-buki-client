@@ -7,6 +7,11 @@ interface InputProps {
   value?: string;
   placeholder?: string;
   showLabel?: boolean;
+  disabled?: boolean;
+  defaultValue?: string;
+  accept?: string;
+  onClick?: () => void;
+  readOnly?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -17,6 +22,11 @@ const Input: React.FC<InputProps> = ({
   value,
   placeholder,
   showLabel = true,
+  disabled = false,
+  defaultValue = "",
+  onClick,
+  readOnly = false,
+
   onChange,
 }) => {
   return (
@@ -36,6 +46,10 @@ const Input: React.FC<InputProps> = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
+        disabled={disabled}
+        defaultValue={defaultValue}
+        onClick={onClick}
+        readOnly={readOnly}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       />
     </div>
