@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BaseLayout from "@/components/BaseLayout";
-import { groups } from "@/components/modal/groupData";
 import GroupCard from "@/components/card/GroupCard";
+import { groups } from "@/data";
 
 const GroupList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");

@@ -1,16 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { groups } from "./groupData";
-
-interface Group {
-  id: number;
-  name: string;
-  category: string;
-  isPublic: boolean;
-  admin: string;
-  members: string[];
-  description: string;
-}
+import { groups } from "@/data";
+import { Group } from "@/types";
 
 interface GroupSearchModalProps {
   isOpen: boolean;
@@ -29,7 +20,7 @@ const GroupSearchModal: React.FC<GroupSearchModalProps> = ({
   };
 
   React.useEffect(() => {
-    const results = groups.filter((group) =>
+    const results = groups.filter((group: Group) =>
       group.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setSearchResults(results);
