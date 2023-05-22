@@ -8,7 +8,7 @@ import DefaultModal from "@/components/common/DefaultModal";
 import DefaultButton from "@/components/common/DefaultButton";
 import AddBukiForm from "@/components/form/AddBukiForm";
 import Link from "next/link";
-import SignIn from "./SignIn";
+import Login from "./Login";
 
 const Profile = () => {
   const [friendDeletion, setFriendDeletion] = useState(false);
@@ -21,7 +21,7 @@ const Profile = () => {
 
   return (
     <BaseLayout>
-      <Link href="/SignIn">
+      <Link href="/Login">
         <DefaultButton
           label={"로그인"}
           onClick={() => {
@@ -29,7 +29,7 @@ const Profile = () => {
           }}
         />
       </Link>
-      <Link href="/SignUp">
+      <Link href="/Join">
         <DefaultButton
           label={"회원가입"}
           onClick={() => {

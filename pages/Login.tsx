@@ -8,7 +8,7 @@ interface FormValues {
   password: string;
 }
 
-const SignIn = () => {
+const Login = () => {
   const [formValues, setFormValues] = useState<FormValues>({
     email: "",
     password: "",
@@ -63,7 +63,7 @@ const SignIn = () => {
       </form>
       <p className="mt-3 text-sm text-gray-500">
         회원이 아니신가요?
-        <Link href="/SignUp" className="font-semibold text-black ml-1">
+        <Link href="/Join" className="font-semibold text-black ml-1">
           회원가입
         </Link>
       </p>
@@ -71,4 +71,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;

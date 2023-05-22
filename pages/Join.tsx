@@ -10,7 +10,7 @@ interface FormValues {
   confirmPassword: string;
 }
 
-const SignUp = () => {
+const Join = () => {
   const [formValues, setFormValues] = useState<FormValues>({
     nickname: "",
     email: "",
@@ -93,7 +93,7 @@ const SignUp = () => {
       </form>
       <p className="mt-3 text-sm text-gray-500">
         이미 회원이신가요?
-        <Link href="/SignIn" className="font-semibold text-black">
+        <Link href="/Login" className="font-semibold text-black">
           로그인 하기
         </Link>
       </p>
@@ -101,4 +101,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Join;
