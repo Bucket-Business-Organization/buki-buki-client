@@ -8,19 +8,17 @@ import DefaultModal from "@/components/common/DefaultModal";
 import DefaultButton from "@/components/common/DefaultButton";
 import AddBukiForm from "@/components/form/AddBukiForm";
 import Link from "next/link";
-import SignIn from "./SignIn";
+import NewProfileForm from "@/components/form/NewProfileForm";
 
 const Profile = () => {
   const [friendDeletion, setFriendDeletion] = useState(false);
   const [groupMemberInformation, setGroupMemberInformation] = useState(false);
   const [groupMemberRemoval, setGroupMemberRemoval] = useState(false);
-  const [withdrawalFromMembership, setWithdrawalFromMembership] =
-    useState(false);
   const [bucketDeletion, setBucketDeletion] = useState(false);
-  const [isAgreed, setIsAgreed] = useState(false);
 
   return (
     <BaseLayout>
+      {/* <NewProfileForm /> */}
       <Link href="/SignIn">
         <DefaultButton
           label={"로그인"}
@@ -43,6 +41,7 @@ const Profile = () => {
         bucketListCount={0}
         birthdate={""}
         location={""}
+        password={""}
       />
       <SearchForm onSearch={(searchText) => console.log(searchText)} />
       <button
@@ -77,14 +76,7 @@ const Profile = () => {
         버킷 삭제 모달
       </button>
       <br />
-      <button
-        onClick={() => {
-          setWithdrawalFromMembership(true);
-        }}
-      >
-        회원 탈퇴 모달
-      </button>
-
+      <button onClick={() => {}}>{">"}</button>
       <DefaultModal
         isOpen={friendDeletion}
         onClose={() => {
@@ -93,8 +85,8 @@ const Profile = () => {
         title={"친구 삭제 모달"}
       >
         <div className="text-xl font-medium">
-          친구 <span className=" font-bold text-emerald-500">다람쥐</span>님을
-          삭제하시겠습니까?
+          친구 <span className=" font-bold text-emerald-500">다람쥐</span>
+          님을 삭제하시겠습니까?
         </div>
         <ProfileImage src="/다람.jpeg" alt="profileImage" size={120} />
         <div className="mb-5">
@@ -156,8 +148,8 @@ const Profile = () => {
         title={"그룹원 추방 모달"}
       >
         <div className="text-xl font-medium">
-          그룹원 <span className=" font-bold text-emerald-500">다람쥐</span>님을
-          추방하시겠습니까?
+          그룹원 <span className=" font-bold text-emerald-500">다람쥐</span>
+          님을 추방하시겠습니까?
         </div>
         <ProfileImage src="/다람.jpeg" alt="profileImage" size={120} />
         <div className="flex space-x-2">
@@ -197,55 +189,6 @@ const Profile = () => {
           }}
         />
       </DefaultModal>
-      <DefaultModal
-        isOpen={withdrawalFromMembership}
-        onClose={() => {
-          setWithdrawalFromMembership(false);
-          setIsAgreed(false);
-        }}
-        title={"회원 탈퇴 모달"}
-      >
-        <h2 className="text-xl font-medium">회원탈퇴</h2>
-        <p className="my-5">
-          탈퇴 완료 후에는 회원님의 모든 정보가 삭제됩니다. 아래 입력창에
-          “동의합니다”를 입력하고 확인을 누르면 탈퇴가 완료됩니다.
-        </p>
-        <p className="text-sm mb-2">
-          위 내용을 확인했으며 회원 탈퇴를 동의하십니까?
-        </p>
-
-        <div>
-          <div className="mb-4">
-            <Input
-              placeholder="동의합니다"
-              onChange={(e) => {
-                if (e.target.value === "동의합니다") {
-                  setIsAgreed(true);
-                } else {
-                  setIsAgreed(false);
-                }
-              }}
-              id={"회원탈퇴인풋"}
-              label={"회원탈퇴인풋"}
-              showLabel={false}
-            />
-          </div>
-          <DefaultButton
-            label="확인"
-            onClick={() => {
-              if (isAgreed) {
-                console.log("탈퇴 완료");
-                setWithdrawalFromMembership(false); // 모달 닫기
-              } else {
-                alert("회원 탈퇴에 동의해주세요.");
-              }
-            }}
-            disabled={!isAgreed}
-            className={`w-full ${isAgreed ? "" : "bg-gray-400"} text-white`}
-          />
-        </div>
-      </DefaultModal>
-
       <AddBukiForm />
     </BaseLayout>
   );

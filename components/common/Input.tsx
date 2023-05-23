@@ -13,6 +13,7 @@ interface InputProps {
   onClick?: () => void;
   readOnly?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -26,17 +27,20 @@ const Input: React.FC<InputProps> = ({
   defaultValue = "",
   onClick,
   readOnly = false,
-
+  className = "",
   onChange,
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-2 w-full flex">
       {showLabel ? (
-        <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
+        <label
+          htmlFor={id}
+          className={` text-gray-700 w-16 font-bold  text-center flex items-center${className}`}
+        >
           {label}
         </label>
       ) : (
-        <label htmlFor={id} className="sr-only">
+        <label htmlFor={id} className={`sr-only ${className}`}>
           {label}
         </label>
       )}
@@ -50,7 +54,7 @@ const Input: React.FC<InputProps> = ({
         defaultValue={defaultValue}
         onClick={onClick}
         readOnly={readOnly}
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className={`text-base text-gray-500 w-full placeholder-gray-500 border-b border-black  py-1 px-1 leading-tight focus:outline-none focus:shadow-outline bg-white ${className}`}
       />
     </div>
   );
