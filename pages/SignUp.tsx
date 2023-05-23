@@ -1,3 +1,4 @@
+import { join, login } from "@/apis/auth";
 import DefaultButton from "@/components/common/DefaultButton";
 import Input from "@/components/common/Input";
 import Link from "next/link";
@@ -23,9 +24,27 @@ const SignUp = () => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // TODO: Add form submission logic
+
+    try {
+      // 회원가입 요청
+      const response = await join({
+        nickname: formValues.nickname,
+        email: formValues.email,
+        pw: formValues.password,
+      });
+
+      // 성공적으로 가입되면 알림 표시
+      if (response.isSuccess) {
+        alert("가입완료");
+      } else {
+        alert("회원가입에 실패했습니다.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("회원가입 중 문제가 발생했습니다.");
+    }
   };
 
   const handleCheckNicknameAvailability = () => {
