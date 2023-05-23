@@ -1,3 +1,4 @@
+import { login } from "@/apis/auth";
 import DefaultButton from "@/components/common/DefaultButton";
 import Input from "@/components/common/Input";
 import Link from "next/link";
@@ -19,9 +20,26 @@ const SignIn = () => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // TODO: Add form submission logic
+
+    try {
+      // 로그인 요청
+      const response = await login({
+        email: formValues.email,
+        pw: formValues.password,
+      });
+
+      // 로그인 요청이 성공적으로 처리되면 알림 표시
+      if (response.isSuccess) {
+        alert("로그인 완료");
+      } else {
+        alert("로그인에 실패했습니다.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("로그인 중 문제가 발생했습니다.");
+    }
   };
 
   const handleForgotPassword = () => {
