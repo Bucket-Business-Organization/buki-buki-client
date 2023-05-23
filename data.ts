@@ -1,0 +1,73 @@
+import { Group, Bucket } from './types';
+
+const buckets: Bucket[] = [
+  {
+    id: 1,
+    content: '유럽 여행 가기',
+    date: '2023-05-18',
+    dDay: 3,
+    writer: '김철수',
+    status: '진행중',
+    category: ['여행'],
+    progress: 50,
+    members: ['김철수', '이영희'],
+    etc: '프랑스, 이탈리아, 독일 순으로 여행할 예정',
+  },
+  {
+    id: 2,
+    content: '워홀 가기',
+    date: '2023-07-01',
+    dDay: 45,
+    writer: '이영희',
+    status: '계획중',
+    category: ['여행', '체험'],
+    progress: 20,
+    members: ['김철수', '이영희'],
+    etc: '캐나다 워홀 가기',
+  },
+  {
+    id: 3,
+    content: '100권 독서하기',
+    date: '2023-12-31',
+    dDay: 228,
+    writer: '이영희',
+    status: '진행중',
+    category: ['독서'],
+    progress: 30,
+    members: ['김철수', '이영희'],
+    etc: '다양한 장르의 책을 읽을 예정',
+  },
+];
+
+export const groups: Group[] = [
+  {
+    id: 1,
+    name: '여행 그룹',
+    category: '여행',
+    isPublic: true,
+    admin: '김철수',
+    members: ['김철수', '이영희'],
+    description: '이것은 여행 그룹입니다.',
+    buckets: [buckets[0], buckets[1]],
+  },
+  {
+    id: 2,
+    name: '독서 그룹',
+    category: '독서',
+    isPublic: false,
+    admin: '이영희',
+    members: ['김철수', '이영희'],
+    description: '이것은 독서 그룹입니다.',
+    buckets: [buckets[2]],
+  },
+  {
+    id: 3,
+    name: '다양한 체험 그룹',
+    category: '체험',
+    isPublic: true,
+    admin: '이영희',
+    members: ['김철수', '이영희'],
+    description: '다양한 체험을 하는 그룹입니다.',
+    buckets: [buckets[1], buckets[2]],
+  },
+];

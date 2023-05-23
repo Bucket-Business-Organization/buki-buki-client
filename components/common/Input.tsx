@@ -28,7 +28,6 @@ const Input: React.FC<InputProps> = ({
   onClick,
   readOnly = false,
   className = "",
-
   onChange,
 }) => {
   return (

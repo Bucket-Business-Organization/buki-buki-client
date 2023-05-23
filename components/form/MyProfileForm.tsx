@@ -79,11 +79,13 @@ const MyProfileForm: React.FC<ProfileFormProps> = ({
     setUpdatedLocation(updatedLocation);
     setIsEditMode(false);
   };
+  
   const handleSaveNickNameClick = () => {
     // Save the updated profile information here
     setUpdatedNickname(updatedNickname);
     setIsNickNameEditMode(false);
   };
+  
   const handlePaswwordSaveClick = () => {
     // Save the updated profile information here
     setUpdatedPassword(updatedPassword);
@@ -94,10 +96,12 @@ const MyProfileForm: React.FC<ProfileFormProps> = ({
     // Reset the updated profile information to the original values here
     setIsEditMode(false);
   };
+  
   const handleNickCancelClick = () => {
     // Reset the updated profile information to the original values here
     setIsNickNameEditMode(false);
   };
+  
   const handleNPasswordCancelClick = () => {
     // Reset the updated profile information to the original values here
     setIsPasswordEditMode(false);

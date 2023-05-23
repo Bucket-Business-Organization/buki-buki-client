@@ -77,7 +77,6 @@ const Profile = () => {
       </button>
       <br />
       <button onClick={() => {}}>{">"}</button>
-
       <DefaultModal
         isOpen={friendDeletion}
         onClose={() => {
@@ -190,7 +189,6 @@ const Profile = () => {
           }}
         />
       </DefaultModal>
-
       <AddBukiForm />
     </BaseLayout>
   );
