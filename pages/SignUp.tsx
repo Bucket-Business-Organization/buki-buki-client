@@ -19,10 +19,10 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-  };
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = event.target;
+  //   setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+  // };
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -64,7 +64,12 @@ const SignUp = () => {
           label="닉네임"
           type="text"
           value={formValues.nickname}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              nickname: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="button"
@@ -78,7 +83,12 @@ const SignUp = () => {
           id="이메일"
           label="이메일"
           value={formValues.email}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              email: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="button"
@@ -92,14 +102,24 @@ const SignUp = () => {
           id="비밀번호"
           label="비밀번호"
           value={formValues.password}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              password: event.target.value,
+            }));
+          }}
         />
         <Input
           type="password"
           id="비밀번호 확인"
           label="비밀번호 확인"
           value={formValues.confirmPassword}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              confirmPassword: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="submit"
