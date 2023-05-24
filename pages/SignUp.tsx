@@ -1,3 +1,4 @@
+import { join, login } from "@/apis/auth";
 import DefaultButton from "@/components/common/DefaultButton";
 import Input from "@/components/common/Input";
 import Link from "next/link";
@@ -18,14 +19,32 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-  };
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = event.target;
+  //   setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+  // };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // TODO: Add form submission logic
+
+    try {
+      // 회원가입 요청
+      const response = await join({
+        nickname: formValues.nickname,
+        email: formValues.email,
+        pw: formValues.password,
+      });
+
+      // 성공적으로 가입되면 알림 표시
+      if (response.isSuccess) {
+        alert("가입완료");
+      } else {
+        alert("회원가입에 실패했습니다.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("회원가입 중 문제가 발생했습니다.");
+    }
   };
 
   const handleCheckNicknameAvailability = () => {
@@ -45,7 +64,12 @@ const SignUp = () => {
           label="닉네임"
           type="text"
           value={formValues.nickname}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              nickname: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="button"
@@ -59,7 +83,12 @@ const SignUp = () => {
           id="이메일"
           label="이메일"
           value={formValues.email}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              email: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="button"
@@ -73,14 +102,24 @@ const SignUp = () => {
           id="비밀번호"
           label="비밀번호"
           value={formValues.password}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              password: event.target.value,
+            }));
+          }}
         />
         <Input
           type="password"
           id="비밀번호 확인"
           label="비밀번호 확인"
           value={formValues.confirmPassword}
-          onChange={handleInputChange}
+          onChange={(event) => {
+            setFormValues((prevValues) => ({
+              ...prevValues,
+              confirmPassword: event.target.value,
+            }));
+          }}
         />
         <DefaultButton
           type="submit"
